@@ -8,10 +8,18 @@ const Course = () => {
      const [course, setCourse] = useState(fakeData);
 
      const [addItem, setAddCourse] = useState([]);
+
      const addCourse = (props) => {
-        const allCourse  = [...addItem, props];
-        setAddCourse(allCourse);
+        if(addItem.indexOf(props) === -1){
+            const allCourse  = [...addItem, props];
+            setAddCourse(allCourse);
+        }
+        else{
+            alert("already your course added");
+        }
+        
      }
+     
     return (
         <div className="container mt-4">
             <div className="text-center">
